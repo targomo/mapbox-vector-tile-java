@@ -363,7 +363,7 @@ public final class JtsAdapter {
                 }
 
                 // Check CCW Winding (must be positive area)
-                if(exteriorArea < 0d) {
+                if(exteriorArea > 0d) {
                     CoordinateArrays.reverse(exteriorRing.getCoordinates());
                 }
 
@@ -382,7 +382,7 @@ public final class JtsAdapter {
                     }
 
                     // Check CW Winding (must be negative area)
-                    if(interiorArea > 0d) {
+                    if(interiorArea < 0d) {
                         CoordinateArrays.reverse(nextInteriorRing.getCoordinates());
                     }
 
